@@ -1,7 +1,7 @@
 {
   "name": "@fstn/typescript-data-generator",
   "description": "Data generator decorator based for Typescript classes",
-  "version": "1.0.1004",
+  "version": "1.0.2",
   "author": "Stephen ZAMBAUX",
   "license": "MIT",
   "main": "dist/index.js",
