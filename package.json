@@ -1,0 +1,37 @@
+{
+  "name": "@fstn/typescript-data-generator",
+  "description": "Data generator decorator based for Typescript classes",
+  "version": "1.0.1",
+  "author": "Stephen ZAMBAUX",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "dependencies": {
+    "@types/faker": "^4.1.12",
+    "@types/node": "^14.0.27"
+  },
+  "devDependencies": {
+    "@types/jest": "^26.0.9",
+    "jest": "^26.0.9",
+    "ts-jest": "26.1.0",
+    "typescript": "^3.9.5",
+    "faker": "^4.1.0"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "ts"
+    ],
+    "transform": {
+      "^.+\\.(t|j)s$": "ts-jest"
+    },
+    "coverageDirectory": "../coverage",
+    "testEnvironment": "node"
+  },
+  "scripts": {
+    "prepublish": "tsc",
+    "build": "tsc",
+    "test": "jest --all -config ./test/jest.config.js"
+  }
+}

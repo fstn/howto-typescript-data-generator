@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "declaration": true,
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "target": "es2017",
+    "outDir": "dist",
+    "skipLibCheck": true,
+    "strict": true,
+    "sourceMap": true,
+    "baseUrl": "./",
+    "incremental": true,
+    "types": [
+      "node",
+      "jest"
+    ]
+  },
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
+}
