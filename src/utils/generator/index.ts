@@ -25,6 +25,10 @@ export const get = (scope?: string) => (instance: any, context: any) => {
             (Object.getPrototypeOf(Object.getPrototypeOf(Object.getPrototypeOf(Object.getPrototypeOf(instance)||{})||{})||{})?.constructor.toString() == p.target.toString() &&
                 (scope === p.scope || !p.scope)) ||
             (Object.getPrototypeOf(Object.getPrototypeOf(Object.getPrototypeOf(Object.getPrototypeOf(Object.getPrototypeOf(instance) ||{})||{})||{})||{})?.constructor.toString() == p.target.toString() &&
+                (scope === p.scope || !p.scope)) ||
+            (Object.getPrototypeOf(Object.getPrototypeOf(Object.getPrototypeOf(Object.getPrototypeOf(Object.getPrototypeOf(Object.getPrototypeOf(instance)||{}) ||{})||{})||{})||{})?.constructor.toString() == p.target.toString() &&
+                (scope === p.scope || !p.scope))||
+            (Object.getPrototypeOf(Object.getPrototypeOf(Object.getPrototypeOf(Object.getPrototypeOf(Object.getPrototypeOf(Object.getPrototypeOf(Object.getPrototypeOf(instance)||{})||{}) ||{})||{})||{})||{})?.constructor.toString() == p.target.toString() &&
                 (scope === p.scope || !p.scope)))
     for (const meta of classMeta) {
         const value = getValueForProperty(scope)(instance, meta, context)
