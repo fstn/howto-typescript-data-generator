@@ -18,10 +18,14 @@ export const get = (scope?: string) => (instance: any, context: any) => {
         .filter((p: GeneratorPropertyMetadataArgs) =>
             (Object.getPrototypeOf(instance)?.constructor.toString() == p.target.toString() &&
             (scope === p.scope || !p.scope)) ||
-        (Object.getPrototypeOf(Object.getPrototypeOf(instance))?.constructor.toString() == p.target.toString() &&
+        (Object.getPrototypeOf(Object.getPrototypeOf(instance)||{})?.constructor.toString() == p.target.toString() &&
             (scope === p.scope || !p.scope)) ||
-        (Object.getPrototypeOf(Object.getPrototypeOf(Object.getPrototypeOf(instance)))?.constructor.toString() == p.target.toString() &&
-            (scope === p.scope || !p.scope)))
+        (Object.getPrototypeOf(Object.getPrototypeOf(Object.getPrototypeOf(instance))||{})?.constructor.toString() == p.target.toString() &&
+            (scope === p.scope || !p.scope)) ||
+            (Object.getPrototypeOf(Object.getPrototypeOf(Object.getPrototypeOf(Object.getPrototypeOf(instance)||{})||{})||{})?.constructor.toString() == p.target.toString() &&
+                (scope === p.scope || !p.scope)) ||
+            (Object.getPrototypeOf(Object.getPrototypeOf(Object.getPrototypeOf(Object.getPrototypeOf(Object.getPrototypeOf(instance) ||{})||{})||{})||{})?.constructor.toString() == p.target.toString() &&
+                (scope === p.scope || !p.scope)))
     for (const meta of classMeta) {
         const value = getValueForProperty(scope)(instance, meta, context)
         if (value || value === false) {
