@@ -1,7 +1,7 @@
 {
   "name": "@fstn/typescript-data-generator",
   "description": "Data generator decorator based for Typescript classes",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "author": "Stephen ZAMBAUX",
   "license": "MIT",
   "main": "dist/index.js",
@@ -34,6 +34,6 @@
     "prepublish": "tsc",
     "build": "tsc",
     "test": "jest --all -config ./test/jest.config.js",
-    "publish-public": "yarn publish --access public"
+    "p": "yarn publish --access public"
   }
 }
